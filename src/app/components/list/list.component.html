@@ -1,0 +1,5 @@
+<div *ngFor="let todo of todoList | async">
+    <h3>{{ todo.description }}</h3>
+    <p>{{ todo.date }}</p>
+    <p>{{ todo.status }}</p>
+</div>
