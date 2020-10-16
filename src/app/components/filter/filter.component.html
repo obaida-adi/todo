@@ -1,0 +1,11 @@
+<div class="filter">
+    <fa-icon [icon]="faFilter"></fa-icon>
+    Filter: 
+    <span class="filter-item" 
+    *ngFor="let filterType of filterTypes | keyvalue" 
+    [ngClass]="{'active': selectedfilter === filterType.value }" 
+    (click)="setFilter(filterType.value)"
+    >
+        {{ filterType.value }}
+    </span>
+</div>

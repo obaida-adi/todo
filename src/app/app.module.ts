@@ -8,6 +8,7 @@ import { CreateTodoComponent } from './components/create-todo/create-todo.compon
 import { FormsModule } from '@angular/forms';
 import { TodoService } from './services/todo.service';
 import { BadgeComponent } from './components/badge/badge.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppComponent,
     ListComponent,
     CreateTodoComponent,
-    BadgeComponent
+    BadgeComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

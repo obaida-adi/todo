@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Filter } from './models/filter';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-app';
+  filter: Filter = Filter.ALL;
+
+  updateFilter(filter: Filter): void {
+    this.filter = filter;
+  }
 }

@@ -1,0 +1,42 @@
+@import "../../../styles.scss";
+
+.filter {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 28rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 0.875rem;
+
+  fa-icon {
+    color: $blue;
+  }
+
+  .filter-item {
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 5rem;
+    height: 1.25rem;
+    color: $text;
+    box-shadow: 0 2px 4px $light-grey;
+    border-radius: 10px;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+      color: white;
+      font-weight: bold;
+      background-color: $blue;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 4px $blue;
+    }
+  }
+}

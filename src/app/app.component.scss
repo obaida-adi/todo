@@ -1,3 +1,5 @@
+@import "../styles.scss";
+
 :host {
   margin: 0;
   display: flex;
@@ -9,12 +11,15 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
-app-create-todo {
+.header {
   position: sticky;
+  width: 100%;
   top: 0;
   left: 0;
-}
-
-app-list {
-  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px $light-grey;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }

@@ -1,2 +1,5 @@
-<app-create-todo></app-create-todo>
-<app-list></app-list>
+<div class="header">
+    <app-create-todo></app-create-todo>
+    <app-filter (filterChanged)="updateFilter($event)"></app-filter>
+</div>
+<app-list [filter]="filter"></app-list>
