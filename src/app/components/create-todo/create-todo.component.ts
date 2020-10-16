@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Todo } from "src/app/models/todo";
 import { TodoStatus } from "src/app/models/todo-status";
 import { TodoService } from "src/app/services/todo.service";
@@ -9,6 +10,7 @@ import { TodoService } from "src/app/services/todo.service";
   styleUrls: ["create-todo.component.scss"],
 })
 export class CreateTodoComponent {
+  faPlus = faPlus; 
   description: string = '';
 
   constructor(private todoService: TodoService) {}

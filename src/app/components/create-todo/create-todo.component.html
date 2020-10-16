@@ -4,5 +4,8 @@
   [(ngModel)]="description"
   placeholder="What do we need to do?"
 />
-<button [disabled]="description === ''" (click)="createTodo()">+</button>
+<button [disabled]="description === ''" (click)="createTodo()">
+  <fa-icon [icon]="faPlus"></fa-icon>
+  Add
+</button>
 

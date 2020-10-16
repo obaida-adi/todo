@@ -36,22 +36,28 @@ button {
   margin-left: 16px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
-  font-size: 2rem;
-  color: $white;
-  background-color: $blue;
+  font-size: 1rem;
+  color: $text;
+  background-color: $white;
   border: none;
-  border-radius: 50%;
+  border-radius: 10px;
   height: 3rem;
-  width: 3rem;
+  width: 5rem;
   text-align: center;
   box-shadow: 0 2px 4px $light-grey;
   outline: none;
-}
 
-button:hover {
-  opacity: 85%;
-}
+  fa-icon {
+    color: $blue;
+    margin-right: 8px;
+  }
 
-button:disabled {
-  opacity: 0.3;
+  &:hover {
+    box-shadow: 0 2px 4px $blue;
+  }
+
+  &:disabled {
+    cursor: auto;
+    opacity: 0.3;
+  }
 }

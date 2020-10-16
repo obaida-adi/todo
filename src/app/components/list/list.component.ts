@@ -4,6 +4,7 @@ import { TodoService } from "src/app/services/todo.service";
 import { takeWhile } from "rxjs/operators";
 import { TodoStatus } from "src/app/models/todo-status";
 import { Observable } from "rxjs";
+import { faEdit, faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: "app-list",
@@ -11,13 +12,20 @@ import { Observable } from "rxjs";
   styleUrls: ["list.component.scss"],
 })
 export class ListComponent {
+  faTrash = faTrash;
+  faEdit = faEdit;
+  faSave = faSave;
   todoList: Observable<Todo[]>;
 
   constructor(private todoService: TodoService) {
     this.todoList = this.todoService.getTodoList();
   }
+  
+  toggleEdit(todo: Todo): void {
+    
+  }
 
-  editTodo(todo: Todo): void {
+  saveTodo(todo: Todo): void {
 
   }
 
