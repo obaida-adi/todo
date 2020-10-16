@@ -1,5 +1,12 @@
-<div *ngFor="let todo of todoList | async">
-    <h3>{{ todo.description }}</h3>
-    <p>{{ todo.date }}</p>
-    <p>{{ todo.status }}</p>
+<div *ngFor="let todo of todoList | async" class="list-item">
+    <input type="checkbox" [checked]="todo.status === 'completed'" (click)="changeTodoStatus(todo)">
+    <div class="item-information">
+        <p class="description" [ngClass]="{ 'strikethrough' : todo.status === 'completed'}">{{ todo.description }}</p>
+        <app-badge [text]="todo.status"></app-badge>
+
+        <p class="date">{{ todo.date }}</p>
+    </div>
+    
+    <input type="button" (click)="deleteTodo(todo)" value="Delete">
+    <input type="button" (click)="editTodo(todo)" value="Edit">
 </div>

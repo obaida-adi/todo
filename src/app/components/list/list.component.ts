@@ -16,4 +16,25 @@ export class ListComponent {
   constructor(private todoService: TodoService) {
     this.todoList = this.todoService.getTodoList();
   }
+
+  editTodo(todo: Todo): void {
+
+  }
+
+  changeTodoStatus(todo: Todo): void {
+    switch(todo.status) {
+      case TodoStatus.REMAINING: {
+        this.todoService.setTodoStatus(todo.id, TodoStatus.COMPLETED);
+        break;
+      }
+      case TodoStatus.COMPLETED: {
+        this.todoService.setTodoStatus(todo.id, TodoStatus.REMAINING);
+        break;
+      }
+    }
+  }
+
+  deleteTodo(todo: Todo): void {
+    this.todoService.deleteTodo(todo.id);
+  }
 }

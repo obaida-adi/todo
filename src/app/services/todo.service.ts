@@ -27,16 +27,29 @@ export class TodoService {
     }
   }
 
-  createTodo(todo: Todo) {
-    this.todoList.push(todo);
+  deleteTodo(id: string): void {
+    const index = this.todoList.findIndex((todo: Todo) => todo.id === id);
+    if (index > -1) {
+      this.todoList.splice(index, 1);
+      this.updateTodoList();
+    }
+  }
+
+  private updateTodoList() {
     this._todoList$.next(this.todoList);
     this.cacheList();
+  }
+
+  createTodo(todo: Todo) {
+    this.todoList.push(todo);
+    this.updateTodoList();
   }
 
   setTodoStatus(id: string, status: TodoStatus) {
     const todo = this.getTodoById(id);
     if (!!todo) {
       todo.status = status;
+      this.updateTodoList();
     }
   }
 
@@ -44,6 +57,7 @@ export class TodoService {
     const todo = this.getTodoById(id);
     if (!!todo) {
       todo.description = description;
+      this.updateTodoList();
     }
   }
 

@@ -9,23 +9,30 @@ import { TodoService } from "src/app/services/todo.service";
   styleUrls: ["create-todo.component.scss"],
 })
 export class CreateTodoComponent {
-  description: string;
+  description: string = '';
 
   constructor(private todoService: TodoService) {}
 
   createTodo(): void {
-    const newTodo: Todo = {
-      id: this.todoService.generateUUID(),
-      status: TodoStatus.ACTIVE,
-      date: new Date(),
-      description: this.description,
-    };
 
-    this.todoService.createTodo(newTodo);
-    this.resetInput();
+    const date = new Date();
+
+    if (this.description === '') {
+      alert('Please fill in a description.');
+    } else {
+      const newTodo: Todo = {
+        id: this.todoService.generateUUID(),
+        status: TodoStatus.REMAINING,
+        date: `${date.toLocaleDateString()} @ ${date.toLocaleTimeString()}`,
+        description: this.description,
+      };
+  
+      this.todoService.createTodo(newTodo);
+      this.resetInput();
+    }
   }
 
   private resetInput(): void {
-    this.description = "";
+    this.description = '';
   }
 }

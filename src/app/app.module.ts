@@ -7,12 +7,14 @@ import { ListComponent } from './components/list/list.component';
 import { CreateTodoComponent } from './components/create-todo/create-todo.component';
 import { FormsModule } from '@angular/forms';
 import { TodoService } from './services/todo.service';
+import { BadgeComponent } from './components/badge/badge.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    CreateTodoComponent
+    CreateTodoComponent,
+    BadgeComponent
   ],
   imports: [
     BrowserModule,

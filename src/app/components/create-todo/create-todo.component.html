@@ -1,7 +1,8 @@
 <input
   type="text"
-  required
+  maxlength="120"
   [(ngModel)]="description"
   placeholder="What do we need to do?"
 />
-<input type="button" (click)="createTodo()" value="Add" />
+<button [disabled]="description === ''" (click)="createTodo()">+</button>
+
