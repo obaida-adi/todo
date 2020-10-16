@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Todo } from "src/app/models/todo";
 import { TodoService } from "src/app/services/todo.service";
-import { takeWhile } from "rxjs/operators";
 import { TodoStatus } from "src/app/models/todo-status";
 import { Observable } from "rxjs";
 import { faEdit, faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -19,14 +18,6 @@ export class ListComponent {
 
   constructor(private todoService: TodoService) {
     this.todoList = this.todoService.getTodoList();
-  }
-  
-  toggleEdit(todo: Todo): void {
-    
-  }
-
-  saveTodo(todo: Todo): void {
-
   }
 
   changeTodoStatus(todo: Todo): void {

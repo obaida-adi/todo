@@ -1,5 +1,9 @@
 @import "../../../styles.scss";
 
+:host {
+  display: block;
+}
+
 .badge {
   color: white;
   width: 5rem;

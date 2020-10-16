@@ -25,28 +25,18 @@
   .item-information {
     width: 20rem;
 
-    input[type="text"] {
-      border: none;
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: normal;
-      outline: none;
+    .description {
+      font-size: 1.5rem;
       color: $text;
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 2px 4px $light-grey;
-      font-weight: light;
-      font-size: 1rem;
+      font-weight: normal;
+
+      &.strike-through {
+        text-decoration: line-through;
+      }
     }
 
-    .description {
-      color: $text;
-      font-weight: normal;
-      font-size: 1.5rem;
-
-      &.strikethrough {
-        text-decoration: line-through;
-        color: $text-grey;
-      }
+    app-badge {
+      margin-top: 10px;
     }
 
     .date {
@@ -64,19 +54,10 @@
     border-radius: 10px;
     box-shadow: 0 2px 4px $light-grey;
     border: none;
+    outline: 0;
 
     fa-icon {
       margin-right: 4px;
-    }
-
-    &.edit-save {
-      fa-icon {
-        color: $blue;
-      }
-
-      &:hover {
-        box-shadow: 0 2px 4px $blue;
-      }
     }
 
     &.delete {

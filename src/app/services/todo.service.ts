@@ -53,14 +53,6 @@ export class TodoService {
     }
   }
 
-  setTodoDescription(id: string, description: string) {
-    const todo = this.getTodoById(id);
-    if (!!todo) {
-      todo.description = description;
-      this.updateTodoList();
-    }
-  }
-
   private getTodoById(id: string): Todo | undefined {
     return this.todoList.find((todo: Todo) => todo.id === id);
   }
