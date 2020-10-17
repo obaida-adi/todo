@@ -1,4 +1,4 @@
-<div *ngFor="let todo of todoList | async">
+<div *ngFor="let todo of todoList$ | async">
     <div class="list-item" *ngIf="filter === 'all' || filter === todo.status">
         <input type="checkbox" [checked]="todo.status === 'completed'" (click)="changeTodoStatus(todo)">
         <div class="item-information">

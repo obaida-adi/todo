@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, ReplaySubject } from "rxjs";
+import { Observable, BehaviorSubject } from "rxjs";
 import { Todo } from "../models/todo";
 import { TodoStatus } from "../models/todo-status";
 import { v4 } from "uuid";
@@ -7,7 +7,7 @@ import { v4 } from "uuid";
 @Injectable()
 export class TodoService {
   private todoList: Todo[];
-  private _todoList$: ReplaySubject<Todo[]> = new ReplaySubject();
+  private _todoList$: BehaviorSubject<Todo[]> = new BehaviorSubject([]);
 
   constructor() {
     this.getCachedTodoList();

@@ -17,10 +17,10 @@ export class ListComponent {
   faTrash = faTrash;
   faEdit = faEdit;
   faSave = faSave;
-  todoList: Observable<Todo[]>;
+  todoList$: Observable<Todo[]>;
 
   constructor(private todoService: TodoService) {
-    this.todoList = this.todoService.getTodoList();
+    this.todoList$ = this.todoService.getTodoList();
   }
 
   changeTodoStatus(todo: Todo): void {
